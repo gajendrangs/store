@@ -1,0 +1,1 @@
+alter table product add column description varchar(1000) not null;
