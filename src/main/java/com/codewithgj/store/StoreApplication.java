@@ -18,8 +18,8 @@ public class StoreApplication {
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(StoreApplication.class, args);
 
-        var userService = context.getBean(UsePersistentService.class);
-        userService.fetchByLoyaltyPoints();
+//        var userService = context.getBean(UsePersistentService.class);
+//        userService.fetchByLoyaltyPoints();
 
 //        var profileService = context.getBean(ProfilePersistentService.class);
 //        profileService.fetchByLoyaltyPoints();
@@ -30,8 +30,8 @@ public class StoreApplication {
 //        var categoryService = context.getBean(CategoryPersistentService.class);
 //        categoryService.persistRelated();
 
-//        var productService = context.getBean(ProductPersistentService.class);
-//        productService.findProducts();
+        var productService = context.getBean(ProductPersistentService.class);
+        productService.fetchProductsPaginated(0, 2);
 	}
 
     public void oldLessons() {
