@@ -26,4 +26,6 @@ public class ProfilePersistentService {
         var profile = profileRepository.findById(3L).orElseThrow();
         System.out.println("ProfileRepository: "+profile.getUser().getEmail());
     }
+
+
 }

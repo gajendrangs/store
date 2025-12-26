@@ -19,21 +19,19 @@ public class StoreApplication {
 		ApplicationContext context = SpringApplication.run(StoreApplication.class, args);
 
         var userService = context.getBean(UsePersistentService.class);
-        //userService.persistRelated();
-        userService.fetchUser();
+        userService.fetchByLoyaltyPoints();
 
 //        var profileService = context.getBean(ProfilePersistentService.class);
-//        profileService.fetchRelatedObjects();
-//
+//        profileService.fetchByLoyaltyPoints();
+
 //        var addressService = context.getBean(AddressPersistentService.class);
-////        addressService.fetchRelatedObjects();
 //        addressService.removeAddress();
 
 //        var categoryService = context.getBean(CategoryPersistentService.class);
 //        categoryService.persistRelated();
 
 //        var productService = context.getBean(ProductPersistentService.class);
-//        productService.fetchProductsByCategory();
+//        productService.findProducts();
 	}
 
     public void oldLessons() {

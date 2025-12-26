@@ -13,6 +13,8 @@ import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class UsePersistentService {
@@ -104,5 +106,22 @@ public class UsePersistentService {
     @Transactional
     public void fetchUser() {
         System.out.println(userRepository.findByEmail("gaja@gmail.com").orElseThrow());
+    }
+
+    @Transactional
+    public void findAllUsers() {
+        var users = userRepository.findAllWithAddresses();
+        users.forEach(user -> {
+            System.out.println(user);
+            user.getAddresses().forEach(System.out::println);
+        });
+    }
+
+    @Transactional
+    public void fetchByLoyaltyPoints() {
+        var users = userRepository.findLoyalUsers(4);
+        users.forEach(user -> {
+            System.out.println(user.getId() + " : " + user.getEmail());
+        });
     }
 }

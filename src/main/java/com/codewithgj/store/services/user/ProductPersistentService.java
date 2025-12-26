@@ -31,6 +31,7 @@ public class ProductPersistentService {
         product.setCategory(categoryRepository.findById(id).orElseThrow());
     }
 
+    @Transactional
     public void findProducts() {
         System.out.println(productRepository.findProducts(90.5, 300.5));
     }
